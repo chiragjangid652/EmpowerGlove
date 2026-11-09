@@ -1,144 +1,113 @@
+# EmpowerGlove – Smart Glove
 
-# 🧤 EmpowerGlove
-### AI-Powered Assistive Communication Glove
+> An assistive wearable prototype designed to translate hand gestures into readable text and, as the project develops, spoken output to support communication.
 
-<p align="center">
-  <b>Breaking Communication Barriers Through Technology</b>
-</p>
-
-<p align="center">
-  <img src="images/prototype.jpg" width="350" alt="EmpowerGlove Prototype">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-ESP32--C3-blue">
-  <img src="https://img.shields.io/badge/Project-Assistive%20Technology-purple">
-  <img src="https://img.shields.io/badge/Status-Prototype-orange">
-  <img src="https://img.shields.io/badge/License-MIT-green">
-</p>
-
-## 📌 About The Project
-
-EmpowerGlove is a wearable assistive communication device designed to help bridge communication barriers faced by people with speech and hearing impairments.
-
-The system uses electronic sensors to detect hand and finger movements, processes the sensor readings through a microcontroller, and identifies predefined gestures.
-
-The recognised gestures can be displayed and converted into audio output, helping users communicate more conveniently.
-
-## 🎯 Problem Statement
-
-Communication can become challenging when a person who uses sign language interacts with someone who does not understand it.
-
-EmpowerGlove aims to make this interaction easier through an affordable, portable and wearable electronic solution.
-
-## 💡 Our Solution
-
-We developed a smart glove that:
-
-- Detects finger movements using sensors.
-- Processes sensor readings using an ESP32-C3.
-- Recognises predefined hand gestures.
-- Displays recognised gestures through a display interface.
-- Provides voice output for recognised gestures.
-
-## ⚙️ Hardware Components
-
-| Component | Purpose |
-|---|---|
-| ESP32-C3 | Main processing unit |
-| SS49E Hall Sensors | Detect finger movements |
-| OLED Display | Display gesture information |
-| Rechargeable Battery | Portable power supply |
-| Connecting Wires | Electrical connections |
-| Glove | Wearable platform |
-
-## 🔬 Working Principle
-
-1. The user performs a hand gesture.
-2. Hall Effect sensors detect changes in magnetic fields caused by finger movement.
-3. Sensor readings are transmitted to the ESP32-C3.
-4. The microcontroller processes the readings.
-5. The readings are compared with predefined gesture patterns.
-6. The recognised gesture is displayed and, where implemented, converted into speech.
-
-## 🧠 Technology Used
-
-- Embedded Systems
-- ESP32-C3 Microcontroller
-- Hall Effect Sensing
-- Gesture Recognition
-- Wireless Communication
-- Assistive Technology
-
-## ✨ Key Features
-
-- Wearable and portable design.
-- Real-time sensor data processing.
-- Gesture recognition.
-- Wireless connectivity.
-- Display and voice output (as implemented).
-- Expandable gesture library.
-
-## 📁 Repository Structure
-
-```text
-EmpowerGlove/
-├── hardware/
-├── software/
-├── documentation/
-├── images/
-├── README.md
-└── LICENSE
-```
-
-## 🚀 Getting Started
-
-### Requirements
-
-- ESP32-C3 development board
-- SS49E Hall Effect sensors
-- USB cable
-- Arduino IDE
-- Required libraries, depending on the firmware
-
-### Installation
-
-1. Install Arduino IDE.
-2. Install the ESP32 board package.
-3. Connect the ESP32-C3 to your computer.
-4. Open the project firmware from the software folder.
-5. Select the correct ESP32-C3 board and COM port.
-6. Upload the firmware.
-7. Connect and test the sensors.
-
-Refer to the hardware documentation for the actual wiring and pin configuration.
-
-## 🔮 Future Scope
-
-- Expand the gesture vocabulary.
-- Improve recognition accuracy.
-- Introduce AI-based gesture classification.
-- Develop a dedicated mobile application.
-- Add multilingual voice output.
-- Improve battery life and wearable comfort.
-
-## 🌍 Impact
-
-EmpowerGlove aims to support inclusive communication by exploring affordable wearable technology for people with communication difficulties.
-
-## 👨‍💻 Project Information
-
-**Project Name:** EmpowerGlove  
-**Category:** Assistive Technology  
-**Platform:** ESP32-C3  
-**Development:** Hardware and Embedded Software
-
-## 📜 License
-
-This project is licensed under the MIT License.
+**Project:** EmpowerGlove – Smart Glove  
+**Hardware build documented here:** SmartGlove Pro — ESP32-C3 + 3 SS49E Hall-effect sensors  
+**Repository status:** Prototype / active development  
+**Visibility target:** Public
 
 ---
 
-<p align="center">
-  <b>EmpowerGlove – Technology for a More Inclusive World ❤️</b>
-</p>
+## Overview
+
+EmpowerGlove is a student-built assistive technology project exploring how hand gestures can be detected electronically and presented as communication output. The current SmartGlove Pro prototype uses three SS49E Hall-effect sensors connected to an ESP32-C3 development board. Sensor readings are processed by firmware to identify supported gestures.
+
+The prototype has also been explored with a Wi-Fi access-point web interface that can display the recognized gesture and sensor readings on a phone or computer.
+
+> **Important:** This repository is a development record, not a certified medical or accessibility device. Gesture coverage, recognition accuracy, reliability and safety must be tested before any real-world dependence.
+
+## Current prototype
+
+- Controller: ESP32-C3 (XIAO ESP32-C3 form factor)
+- Gesture sensing: 3 × SS49E linear Hall-effect sensors
+- Sensor positions: index, middle and ring fingers
+- Interface experiment: ESP32-C3 Wi-Fi access point and browser-based dashboard
+- Intended outputs: gesture text; speech output is a planned/optional development item
+
+Hardware and firmware may change as the prototype evolves. Check the documentation and release notes before building.
+
+## Repository map
+
+```text
+EmpowerGlove/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CHANGELOG.md
+├── .gitignore
+├── docs/
+│   ├── project-overview.md
+│   ├── working-principle.md
+│   ├── hardware-and-components.md
+│   ├── wiring.md
+│   ├── testing-and-calibration.md
+│   └── roadmap.md
+├── firmware/
+│   └── esp32-c3/
+│       ├── README.md
+│       └── src/
+│           └── main.ino
+├── web-interface/
+│   └── README.md
+├── gestures/
+│   └── gesture-dataset-template.csv
+├── hardware/
+│   ├── README.md
+│   ├── circuit/
+│   │   └── README.md
+│   └── enclosure/
+│       └── README.md
+├── media/
+│   ├── README.md
+│   ├── project/
+│   ├── prototype/
+│   └── circuit/
+└── .github/
+    └── ISSUE_TEMPLATE/
+        ├── bug_report.md
+        └── feature_request.md
+```
+
+## Getting started
+
+1. Read [Project overview](docs/project-overview.md).
+2. Review [Hardware and components](docs/hardware-and-components.md) and [Wiring](docs/wiring.md).
+3. Install the Arduino IDE and the ESP32 board package appropriate for your ESP32-C3 board.
+4. Open `firmware/esp32-c3/src/main.ino`.
+5. Confirm the exact board pin mapping and sensor output range for your physical build before uploading firmware.
+6. Record calibration measurements in `docs/testing-and-calibration.md` and gesture samples in `gestures/`.
+
+The starter firmware intentionally contains pin placeholders. **Do not assume GPIO numbers from this template match your wiring.** Set the correct pins for your specific board before testing.
+
+## Documentation
+
+- [Project overview](docs/project-overview.md)
+- [Working principle](docs/working-principle.md)
+- [Hardware and components](docs/hardware-and-components.md)
+- [Wiring notes](docs/wiring.md)
+- [Testing and calibration](docs/testing-and-calibration.md)
+- [Development roadmap](docs/roadmap.md)
+
+## Photos and demonstrations
+
+Add original project photos to `media/project/`, prototype close-ups to `media/prototype/`, and circuit images to `media/circuit/`. Reference them in this README using relative paths, for example:
+
+```markdown
+![EmpowerGlove prototype](media/project/prototype-front.jpg)
+```
+
+Only add images you have permission to share. Avoid including faces, school IDs, phone numbers, Wi-Fi passwords or other personal information without permission.
+
+## Contributing
+
+This is a student research and engineering project. Suggestions, bug reports and improvements are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE).
+
+## Acknowledgements
+
+Built as an educational assistive-technology prototype. Add mentor, school, competition and collaborator acknowledgements here only with their permission.
