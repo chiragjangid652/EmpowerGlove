@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it as below."
+title: "EmpowerGlove – Smart Glove"
+type: software
+authors:
+  - family-names: Jangid
+    given-names: Chirag
+repository-code: "https://github.com/chiragjangid652/EmpowerGlove"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-09
+abstract: "A student-built assistive wearable prototype exploring gesture sensing with an ESP32-C3 and three SS49E Hall-effect sensors."
