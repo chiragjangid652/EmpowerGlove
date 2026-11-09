@@ -1,85 +1,68 @@
-# EmpowerGlove – Smart Glove
+# 🧤 EmpowerGlove – Smart Glove
 
-> An assistive wearable prototype designed to translate hand gestures into readable text and, as the project develops, spoken output to support communication.
+**An assistive wearable prototype exploring gesture-to-text communication.**
 
-**Project:** EmpowerGlove – Smart Glove  
-**Hardware build documented here:** SmartGlove Pro — ESP32-C3 + 3 SS49E Hall-effect sensors  
-**Repository status:** Prototype / active development  
-**Visibility target:** Public
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-ESP32--C3-blue?style=for-the-badge" alt="Platform: ESP32-C3">
+  <img src="https://img.shields.io/badge/Sensors-3%20×%20SS49E-purple?style=for-the-badge" alt="Three SS49E sensors">
+  <img src="https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge" alt="Prototype">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+</p>
 
----
+EmpowerGlove is a student engineering project investigating an affordable wearable interface that senses selected finger movements and maps them to predefined communication labels. The current **SmartGlove Pro** iteration uses an **ESP32-C3** development board and **three SS49E linear Hall-effect sensors**.
 
-## Overview
+> **Project status:** Experimental prototype. This repository documents development and testing; it is not a certified medical or accessibility device. It does not claim to translate complete sign languages.
 
-EmpowerGlove is a student-built assistive technology project exploring how hand gestures can be detected electronically and presented as communication output. The current SmartGlove Pro prototype uses three SS49E Hall-effect sensors connected to an ESP32-C3 development board. Sensor readings are processed by firmware to identify supported gestures.
+## At a glance
 
-The prototype has also been explored with a Wi-Fi access-point web interface that can display the recognized gesture and sensor readings on a phone or computer.
+| Area | Current documented build |
+|---|---|
+| Controller | ESP32-C3 (XIAO ESP32-C3 form factor) |
+| Sensors | 3 × SS49E linear Hall-effect sensors |
+| Sensor positions | Index, middle and ring fingers |
+| Current interface direction | ESP32-C3 Wi-Fi access-point dashboard |
+| Output direction | Recognized gesture text; speech is a future/optional extension |
+| Firmware status | Sensor-reading starter sketch; pin mapping and calibration required |
 
-> **Important:** This repository is a development record, not a certified medical or accessibility device. Gesture coverage, recognition accuracy, reliability and safety must be tested before any real-world dependence.
+## How it works
 
-## Current prototype
+1. A finger moves a magnet relative to its Hall-effect sensor.
+2. The sensor produces an analog voltage that changes with the magnetic field.
+3. The ESP32-C3 samples the sensor outputs.
+4. Calibrated readings are filtered and compared with defined gesture patterns.
+5. A recognized label can be shown through a local interface; audio output can be explored separately.
 
-- Controller: ESP32-C3 (XIAO ESP32-C3 form factor)
-- Gesture sensing: 3 × SS49E linear Hall-effect sensors
-- Sensor positions: index, middle and ring fingers
-- Interface experiment: ESP32-C3 Wi-Fi access point and browser-based dashboard
-- Intended outputs: gesture text; speech output is a planned/optional development item
+The magnet arrangement, board pinout, ADC range and thresholds must be verified on the actual assembled glove.
 
-Hardware and firmware may change as the prototype evolves. Check the documentation and release notes before building.
-
-## Repository map
+## Repository structure
 
 ```text
 EmpowerGlove/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── SECURITY.md
+├── .github/                  # Issue templates
+├── docs/                     # Project, hardware, wiring and test documentation
+├── firmware/esp32-c3/        # ESP32-C3 Arduino firmware
+├── gestures/                 # Gesture vocabulary and sample-data template
+├── hardware/                 # Circuit and wearable design files
+├── media/                    # Project, prototype and circuit photos
+├── web-interface/            # Web dashboard documentation and source
 ├── CHANGELOG.md
-├── .gitignore
-├── docs/
-│   ├── project-overview.md
-│   ├── working-principle.md
-│   ├── hardware-and-components.md
-│   ├── wiring.md
-│   ├── testing-and-calibration.md
-│   └── roadmap.md
-├── firmware/
-│   └── esp32-c3/
-│       ├── README.md
-│       └── src/
-│           └── main.ino
-├── web-interface/
-│   └── README.md
-├── gestures/
-│   └── gesture-dataset-template.csv
-├── hardware/
-│   ├── README.md
-│   ├── circuit/
-│   │   └── README.md
-│   └── enclosure/
-│       └── README.md
-├── media/
-│   ├── README.md
-│   ├── project/
-│   ├── prototype/
-│   └── circuit/
-└── .github/
-    └── ISSUE_TEMPLATE/
-        ├── bug_report.md
-        └── feature_request.md
+├── CITATION.cff
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+└── SECURITY.md
 ```
 
 ## Getting started
 
 1. Read [Project overview](docs/project-overview.md).
-2. Review [Hardware and components](docs/hardware-and-components.md) and [Wiring](docs/wiring.md).
-3. Install the Arduino IDE and the ESP32 board package appropriate for your ESP32-C3 board.
-4. Open `firmware/esp32-c3/src/main.ino`.
-5. Confirm the exact board pin mapping and sensor output range for your physical build before uploading firmware.
-6. Record calibration measurements in `docs/testing-and-calibration.md` and gesture samples in `gestures/`.
+2. Check [Hardware and components](docs/hardware-and-components.md) and [Wiring notes](docs/wiring.md).
+3. Install Arduino IDE and the ESP32 board package for your exact ESP32-C3 board.
+4. Open [`firmware/esp32-c3/src/main.ino`](firmware/esp32-c3/src/main.ino).
+5. Set the verified ADC GPIO numbers for your board. The starter sketch intentionally uses placeholders.
+6. Test each sensor individually, then record readings in [Testing and calibration](docs/testing-and-calibration.md).
 
-The starter firmware intentionally contains pin placeholders. **Do not assume GPIO numbers from this template match your wiring.** Set the correct pins for your specific board before testing.
+**Do not upload the starter sketch expecting gesture recognition immediately.** It currently reads three analog channels and prints raw values only. Gesture classification and the web server need to be integrated and tested in the next firmware iteration.
 
 ## Documentation
 
@@ -88,26 +71,31 @@ The starter firmware intentionally contains pin placeholders. **Do not assume GP
 - [Hardware and components](docs/hardware-and-components.md)
 - [Wiring notes](docs/wiring.md)
 - [Testing and calibration](docs/testing-and-calibration.md)
+- [Gesture vocabulary](docs/gesture-vocabulary.md)
 - [Development roadmap](docs/roadmap.md)
+- [Web interface notes](web-interface/README.md)
 
 ## Photos and demonstrations
 
-Add original project photos to `media/project/`, prototype close-ups to `media/prototype/`, and circuit images to `media/circuit/`. Reference them in this README using relative paths, for example:
+Add original photographs to `media/project/`, prototype close-ups to `media/prototype/`, and wiring images to `media/circuit/`. Use relative image paths so the images work for people who clone the repository.
 
-```markdown
-![EmpowerGlove prototype](media/project/prototype-front.jpg)
-```
+Only publish media you own or have permission to share. Get consent before posting identifiable people, and remove private details such as passwords, school IDs and phone numbers.
 
-Only add images you have permission to share. Avoid including faces, school IDs, phone numbers, Wi-Fi passwords or other personal information without permission.
+## Safety and limitations
+
+- Three sensors can represent only a limited set of measured finger configurations.
+- This prototype is not a complete sign-language translator.
+- Recognition performance must be measured across repeated trials and different glove fits.
+- Verify all electrical limits, board pin mappings and battery protection before powering wearable hardware.
+- Do not rely on this experimental prototype as the only means of communication in an emergency.
 
 ## Contributing
 
-This is a student research and engineering project. Suggestions, bug reports and improvements are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+Suggestions and improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and use the GitHub issue templates to report bugs or propose features.
 
-## License
+## License and citation
 
-Released under the MIT License. See [LICENSE](LICENSE).
+The project is released under the [MIT License](LICENSE). If you use or reference this project, see [CITATION.cff](CITATION.cff).
 
-## Acknowledgements
-
-Built as an educational assistive-technology prototype. Add mentor, school, competition and collaborator acknowledgements here only with their permission.
+---
+**EmpowerGlove — exploring technology for more inclusive communication.**
