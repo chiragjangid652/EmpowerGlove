@@ -94,6 +94,28 @@ The detailed, machine-readable list is in [BOM.csv](BOM.csv). It includes a supp
 
 **Budget snapshot:** ₹18,276 from the supplied cart screenshots, plus ₹739 provisional XIAO ESP32-C3 listing = **₹19,015 estimated component total**. Shipping, taxes if not included, and price changes may alter the final checkout amount. Amazon links in the BOM are search links where an exact stable product URL was not available.
 
+## Prototype photograph
+
+This is an original photograph of the physical glove prototype (not a concept render):
+
+![Original EmpowerGlove prototype](media/prototype/original-prototype.jpg)
+
+## System overview
+
+```mermaid
+flowchart LR
+  A[Finger movement] --> B[Magnet position changes]
+  B --> C[Three Hall-effect sensors]
+  C --> D[Seeed XIAO ESP32-C3]
+  D --> E[Sensor sampling and gesture logic]
+  E --> F[Wi-Fi access-point dashboard]
+  F --> G[Phone or browser displays gesture label]
+  E -. future audio extension .-> H[DFPlayer Mini + amplifier + speaker]
+  I[Raspberry Pi 5 + microSD] -. future upgrade only .-> D
+```
+
+The diagram is a system-level overview, not a pin-accurate electrical schematic. The actual GPIO mapping remains to be verified and recorded in [Wiring notes](docs/wiring.md). The current prototype is hand-wired and has no custom PCB, so PCB layout/Gerber screenshots are not applicable yet. A custom mechanical CAD/STEP assembly is also not available because the current build uses a fabric glove and off-the-shelf modules without a designed enclosure.
+
 ## Photos and demonstrations
 
 Add original photographs to `media/project/`, prototype close-ups to `media/prototype/`, and wiring images to `media/circuit/`. Use relative image paths so the images work for people who clone the repository.
