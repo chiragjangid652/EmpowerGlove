@@ -1,6 +1,6 @@
 item,category,description,quantity,unit_price_inr,line_total_inr,source,status,notes
 Seeed XIAO ESP32-C3,Controller,"ESP32-C3 development board",1,,,Robocraze cart,Planned,"User confirmed this board has been added to the cart; price was not visible in the supplied screenshots."
-Raspberry Pi 5 4GB,Controller/compute,"Single-board computer, 4GB RAM",1,13409,13409,Robocraze cart,Planned,"Optional higher-level compute platform; current documented prototype uses ESP32-C3. Confirm whether the Pi is needed for this build."
+Raspberry Pi 5 4GB,Controller/compute,"Single-board computer, 4GB RAM",1,13409,13409,Robocraze cart,Planned,"Future upgrade only; not part of the current prototype architecture. Current build uses the Seeed XIAO ESP32-C3."
 SanDisk 128GB microSDXC,Storage,"128GB microSDXC memory card",1,2809,2809,Robocraze cart,Planned,"For Raspberry Pi 5 if that platform is adopted."
 Mini DF MP3 Player Module MP3-TF-16P,Audio,"Serial MP3 playback module",1,94,94,Robocraze cart,Planned,"Audio output extension."
 Hook-up wire packet,Interconnect,"1 metre each in five colours",5,75,375,Robocraze cart,Planned,"Cart quantity shown as five packets; verify this is intentional."
