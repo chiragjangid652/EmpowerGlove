@@ -75,24 +75,30 @@ EmpowerGlove/
 - [Development roadmap](docs/roadmap.md)
 - [Web interface notes](web-interface/README.md)
 
-## Bill of materials and build journal
-
-- [BOM.csv](BOM.csv) — visible cart-listed components, quantities and displayed prices. Items are marked as planned; a shopping cart is not proof of purchase.
-- [JOURNAL.md](JOURNAL.md) — development notes, architecture caveats and the pre-shipment checklist.
-
-**Procurement note:** The current documented prototype uses an ESP32-C3 with three SS49E Hall sensors. The cart also lists a Raspberry Pi 5, microSD card and five SmartElex Hall sensor modules; these are recorded as planned items and are not represented as already integrated. Review the journal before purchasing or assembling.
-
-**CAD/PCB note:** No custom enclosure or PCB has been designed for the current point-to-point prototype, so no STEP or fabrication source files are available yet. This is documented in `JOURNAL.md`; add editable CAD/PCB sources and STEP exports if custom designs are created later.
-
 ## Bill of materials and procurement
 
-The detailed, machine-readable list is in [BOM.csv](BOM.csv). It includes a supplier/product link for each line, quantity, displayed or estimated unit price, and line total.
+The table below is the human-readable BOM; the complete machine-readable list is [BOM.csv](BOM.csv). Prices are transcribed from the supplied cart screenshots or a provisional supplier-page estimate. Links open Indian supplier/product pages or India-specific search results. Verify exact listing, stock and checkout price before ordering.
 
-**Current planned controller:** Seeed XIAO ESP32-C3 (₹739 supplier-page listing used as a provisional estimate; confirm the cart/checkout price).
+| Part | Qty. | Unit price | Line total | Source |
+|---|---:|---:|---:|---|
+| Seeed XIAO ESP32-C3 (current controller) | 1 | ₹739* | ₹739* | [Robocraze](https://robocraze.com/products/seeed-studio-xiao-esp32c3) |
+| Raspberry Pi 5 4GB (future upgrade) | 1 | ₹13,409 | ₹13,409 | [Robocraze](https://robocraze.com/products/raspberry-pi-5-4gb) |
+| SanDisk 128GB microSDXC (future upgrade) | 1 | ₹2,809 | ₹2,809 | [Robocraze](https://robocraze.com/products/sandisk-128-gb-microsdxc-memory-card) |
+| Mini DF MP3 Player Module MP3-TF-16P | 1 | ₹94 | ₹94 | [Robocraze](https://robocraze.com/products/dfplayer-mini-mp3-module) |
+| Hook-up wire packet (five colours) | 5 | ₹75 | ₹375 | [Robocraze](https://robocraze.com/products/single-stranded-hook-up-wires-1m-each-5-colors) |
+| SmartElex Hall sensor module | 5 | ₹122 | ₹610 | [Robocraze](https://robocraze.com/products/smartelex-hall-sensor) |
+| 8Ω speaker (cart listing) | 1 | ₹54 | ₹54 | [Robocraze](https://robocraze.com/products/8-ohm-0-25w-speaker) |
+| PAM8403 amplifier module | 1 | ₹22 | ₹22 | [Robocraze](https://robocraze.com/products/pam8403-digital-power-amplifier) |
+| 10 × 2mm neodymium disc magnets (30 pcs) | 1 | ₹399 | ₹399 | [Amazon India search](https://www.amazon.in/s?k=10x2mm+neodymium+disc+magnets) |
+| Grey-white nitrile-coated work gloves (10 pairs) | 1 | ₹349 | ₹349 | [Amazon India search](https://www.amazon.in/s?k=grey+white+nitrile+coated+work+gloves+pack+of+10) |
+| 3.7V 500mAh LiPo battery | 1 | ₹155 | ₹155 | [Amazon India search](https://www.amazon.in/s?k=3.7V+500mAh+LiPo+battery) |
+| **Estimated total** | | | **₹19,015** | |
 
-**Future upgrade only:** Raspberry Pi 5 4GB and 128GB microSD card. They are not part of the current ESP32-C3 prototype.
+*The XIAO ESP32-C3 price is a provisional ₹739 supplier-page estimate and was not visible in the original cart screenshots. The other values are transcribed from the supplied screenshots. The original carts total ₹18,276 (Robocraze ₹17,373 + Amazon ₹903); adding the estimated XIAO price gives ₹19,015. Shipping and price changes are excluded.
 
-**Budget snapshot:** ₹18,276 from the supplied cart screenshots, plus ₹739 provisional XIAO ESP32-C3 listing = **₹19,015 estimated component total**. Shipping, taxes if not included, and price changes may alter the final checkout amount. Amazon links in the BOM are search links where an exact stable product URL was not available.
+**Current prototype:** XIAO ESP32-C3 with three Hall sensors. **Future upgrade:** Raspberry Pi 5 and microSD card. The five SmartElex modules shown in the cart are planned purchases; confirm compatibility and final quantity against the current three-sensor design before ordering. The BOM lists planned/cart-listed items, not proof of purchase or installation.
+
+[Open the complete BOM CSV](BOM.csv) · [Development journal](JOURNAL.md)
 
 ## Prototype photograph
 
