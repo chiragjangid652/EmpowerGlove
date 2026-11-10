@@ -1,44 +1,51 @@
 # EmpowerGlove Development Journal
 
-## 2026-11-10 — BOM and pre-shipment documentation
+# November 10, 2026: Prototype, procurement and pre-shipment review
 
-![Original physical glove prototype](media/prototype/original-prototype.jpg)
+![Original physical EmpowerGlove prototype](media/prototype/original-prototype.jpg)
 
+## Prototype status
 
-### Cart review
-Recorded the clearly visible parts from the Robocraze and Amazon cart screenshots in the root-level `BOM.csv`. The CSV preserves the displayed unit prices and quantities and labels all entries as planned/cart-listed rather than purchased or installed.
+The current SmartGlove Pro prototype uses a Seeed XIAO ESP32-C3 and three Hall-effect sensors mounted on the index, middle and ring fingers. The physical prototype is a fabric glove with off-the-shelf electronic modules and point-to-point wiring.
+
+The Raspberry Pi 5 4GB and 128GB microSD card are reserved for a future upgrade; they are not part of the current prototype.
+
+## Procurement review
+
+The root-level [BOM.csv](BOM.csv) records the components visible in the supplied Robocraze and Amazon cart screenshots, plus the XIAO ESP32-C3 at a provisional supplier-page estimate.
 
 - Robocraze cart total shown: **₹17,373**
 - Amazon cart subtotal shown: **₹903**
-- Combined visible cart value: **₹18,276**
-- The screenshots show a 15-item Robocraze cart; the visible line items reconcile to the displayed total. The Amazon screenshot shows three line items.
+- Original cart total: **₹18,276**
+- XIAO ESP32-C3 provisional estimate: **₹739**
+- Provisional BOM total: **₹19,015**, excluding shipping and any price changes
 
-### Important architecture note
-The current documented SmartGlove Pro prototype is based on a **Seeed XIAO ESP32-C3 and three Hall-effect sensors**. The **Raspberry Pi 5 4GB and 128GB microSD card are future upgrades only**, not part of the current prototype. The cart lists five SmartElex Hall sensor modules; confirm their compatibility and final quantity before purchase.
+Cart entries are planned purchases, not proof that the parts have been purchased or installed. Confirm exact product listings, compatibility, quantities and checkout prices before ordering. Shipping has not been quoted in the screenshots; add the actual checkout shipping charge to the BOM when known.
 
-### CAD and PCB files
-No custom enclosure CAD, mechanical assembly, or custom PCB has been designed for the documented prototype at this stage. The build uses a wearable glove, off-the-shelf development/sensor modules, and point-to-point wiring. Therefore, there is no genuine source CAD, PCB layout, Gerber set, or STEP assembly to publish yet. Do not create placeholder fabrication files that could be mistaken for manufacturing-ready designs.
+## CAD and PCB status
 
-If a custom enclosure, carrier PCB, or mounting bracket is designed later, add its editable source files and export a STEP model (where applicable) before shipment.
+No custom enclosure CAD, mechanical assembly, custom PCB layout or Gerber set has been designed for this version. The prototype uses a fabric glove, off-the-shelf development/sensor modules and point-to-point wiring. Therefore, there are no genuine STEP, source CAD or PCB fabrication files to provide at this stage.
 
-### Before shipment checklist
-- [x] Confirm controller architecture: XIAO ESP32-C3 now; Raspberry Pi 5 is a future upgrade.
-- [ ] Confirm the exact Hall sensor module and count; the current documented build uses three SS49E sensors.
-- [ ] Confirm actual purchased quantities and update `BOM.csv` with final supplier/order details.
-- [ ] Verify battery protection, charging, polarity, current draw, and safe mounting before wearable use.
-- [ ] Add original prototype, wiring, and working-interface photographs.
-- [ ] Add CAD/STEP and PCB source files only if custom mechanical/electronic designs are created.
-- [ ] Test gesture recognition repeatedly and document results before claiming reliable operation.
+If a custom enclosure, carrier PCB or mounting bracket is designed in a later revision, add the editable source files and STEP exports where applicable. Do not use placeholder fabrication files.
 
-## Procurement update
+## Wiring and system documentation
 
-The root-level [BOM.csv](BOM.csv) now includes India-accessible supplier links, quantities, prices and a provisional total. The XIAO ESP32-C3 supplier page listed ₹739 during preparation; confirm the actual cart price before treating this as the final amount. The two Amazon entries use India search links so the exact listing can be selected and checked.
+The repository includes a [conceptual wiring diagram](docs/wiring.md) and a system overview in the [README](README.md). The wiring diagram deliberately leaves GPIO assignments unconfirmed until the exact XIAO ESP32-C3 board revision and physical connections are verified. It is a conceptual connection guide, not a pin-accurate schematic.
 
-The original cart screenshots total ₹18,276 (Robocraze ₹17,373 + Amazon ₹903). Adding the XIAO board at the ₹739 supplier-page listing gives a provisional estimate of ₹19,015, excluding shipping and price changes.
+## Pre-shipment checklist
 
-## Photo evidence
-
-The dated entry above includes an original photograph of the physical glove saved at `media/prototype/original-prototype.jpg`. Add a real photograph to each future dated journal entry. Do not substitute an AI-generated product render for evidence of the real working prototype.
+- [x] Current controller identified as Seeed XIAO ESP32-C3.
+- [x] Raspberry Pi 5 and microSD card marked as future upgrades.
+- [x] Original prototype photograph added to this journal and README.
+- [x] BOM CSV and README BOM table added.
+- [x] Conceptual wiring diagram and system overview documented.
+- [ ] Confirm the exact Hall sensor module type and final quantity.
+- [ ] Verify GPIO mapping and update the wiring diagram with actual connections.
+- [ ] Confirm battery protection, charging, polarity, current draw and safe mounting.
+- [ ] Add photographs of actual sensor wiring and the working Wi-Fi dashboard.
+- [ ] Update BOM with final checkout prices and shipping once known.
+- [ ] Test gesture recognition repeatedly and record measured results before claiming reliability.
 
 ## Notes
-This journal records the project state and planned procurement based on the screenshots available on this date. Cart prices and availability may change; a cart is not proof of purchase.
+
+This entry records the project state and cart information available on November 10, 2026. Prices and availability can change. The prototype is experimental and is not a certified medical or accessibility device.
