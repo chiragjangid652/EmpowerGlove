@@ -75,6 +75,15 @@ EmpowerGlove/
 - [Development roadmap](docs/roadmap.md)
 - [Web interface notes](web-interface/README.md)
 
+## Bill of materials and build journal
+
+- [BOM.csv](BOM.csv) — visible cart-listed components, quantities and displayed prices. Items are marked as planned; a shopping cart is not proof of purchase.
+- [JOURNAL.md](JOURNAL.md) — development notes, architecture caveats and the pre-shipment checklist.
+
+**Procurement note:** The current documented prototype uses an ESP32-C3 with three SS49E Hall sensors. The cart also lists a Raspberry Pi 5, microSD card and five SmartElex Hall sensor modules; these are recorded as planned items and are not represented as already integrated. Review the journal before purchasing or assembling.
+
+**CAD/PCB note:** No custom enclosure or PCB has been designed for the current point-to-point prototype, so no STEP or fabrication source files are available yet. This is documented in `JOURNAL.md`; add editable CAD/PCB sources and STEP exports if custom designs are created later.
+
 ## Photos and demonstrations
 
 Add original photographs to `media/project/`, prototype close-ups to `media/prototype/`, and wiring images to `media/circuit/`. Use relative image paths so the images work for people who clone the repository.
