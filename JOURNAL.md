@@ -27,5 +27,15 @@ If a custom enclosure, carrier PCB, or mounting bracket is designed later, add i
 - [ ] Add CAD/STEP and PCB source files only if custom mechanical/electronic designs are created.
 - [ ] Test gesture recognition repeatedly and document results before claiming reliable operation.
 
+## Procurement update
+
+The root-level [BOM.csv](BOM.csv) now includes India-accessible supplier links, quantities, prices and a provisional total. The XIAO ESP32-C3 supplier page listed ₹739 during preparation; confirm the actual cart price before treating this as the final amount. The two Amazon entries use India search links so the exact listing can be selected and checked.
+
+The original cart screenshots total ₹18,276 (Robocraze ₹17,373 + Amazon ₹903). Adding the XIAO board at the ₹739 supplier-page listing gives a provisional estimate of ₹19,015, excluding shipping and price changes.
+
+## Photo evidence still required
+
+Add at least one **actual prototype photograph** to every dated journal entry, for example under `media/prototype/`, then embed it in the entry with a relative Markdown image path. The original glove reference photo is available in this conversation, but it has not yet been uploaded into this repository. Do not substitute an AI-generated product render for evidence of the real working prototype.
+
 ## Notes
 This journal records the project state and planned procurement based on the screenshots available on this date. Cart prices and availability may change; a cart is not proof of purchase.
