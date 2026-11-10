@@ -84,6 +84,16 @@ EmpowerGlove/
 
 **CAD/PCB note:** No custom enclosure or PCB has been designed for the current point-to-point prototype, so no STEP or fabrication source files are available yet. This is documented in `JOURNAL.md`; add editable CAD/PCB sources and STEP exports if custom designs are created later.
 
+## Bill of materials and procurement
+
+The detailed, machine-readable list is in [BOM.csv](BOM.csv). It includes a supplier/product link for each line, quantity, displayed or estimated unit price, and line total.
+
+**Current planned controller:** Seeed XIAO ESP32-C3 (₹739 supplier-page listing used as a provisional estimate; confirm the cart/checkout price).
+
+**Future upgrade only:** Raspberry Pi 5 4GB and 128GB microSD card. They are not part of the current ESP32-C3 prototype.
+
+**Budget snapshot:** ₹18,276 from the supplied cart screenshots, plus ₹739 provisional XIAO ESP32-C3 listing = **₹19,015 estimated component total**. Shipping, taxes if not included, and price changes may alter the final checkout amount. Amazon links in the BOM are search links where an exact stable product URL was not available.
+
 ## Photos and demonstrations
 
 Add original photographs to `media/project/`, prototype close-ups to `media/prototype/`, and wiring images to `media/circuit/`. Use relative image paths so the images work for people who clone the repository.
