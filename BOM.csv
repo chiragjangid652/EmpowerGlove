@@ -1,0 +1,11 @@
+item,category,description,quantity,unit_price_inr,line_total_inr,source,status,notes
+Raspberry Pi 5 4GB,Controller/compute,"Single-board computer, 4GB RAM",1,13409,13409,Robocraze cart,Planned,"Optional higher-level compute platform; current documented prototype uses ESP32-C3. Confirm architecture before purchase."
+SanDisk 128GB microSDXC,Storage,"128GB microSDXC memory card",1,2809,2809,Robocraze cart,Planned,"For Raspberry Pi 5 if that platform is adopted."
+Mini DF MP3 Player Module MP3-TF-16P,Audio,"Serial MP3 playback module",1,94,94,Robocraze cart,Planned,"Audio output extension."
+Hook-up wire packet,Interconnect,"1 metre each in five colours",5,75,375,Robocraze cart,Planned,"Cart quantity shown as five packets; verify this is intentional."
+SmartElex Hall Sensor,Sensor,"Hall-effect sensor breakout module",5,122,610,Robocraze cart,Planned,"Cart quantity shown as five; current documented glove iteration uses three SS49E sensors, so verify compatibility and required count."
+8 ohm 0.5W speaker,Audio,"Small 8 ohm 0.5W speaker",1,54,54,Robocraze cart,Planned,"For audio output."
+PAM8403 digital power amplifier,Audio,"PAM8403 speaker amplifier module",1,22,22,Robocraze cart,Planned,"Check supply voltage and speaker wiring before use."
+Neodymium disc magnets,Sensor accessory,"30-piece 10 x 2 mm disc magnet pack",1,399,399,Amazon cart,Planned,"Magnet placement and strength must be tested with the selected Hall sensors."
+Grey-white coated work gloves,Wearable base,"Pack of 10 pairs, nitrile-coated",1,349,349,Amazon cart,Planned,"Cart shows one pack; prototype requires only one glove initially."
+3.7V 500mAh LiPo battery,Power,"Rechargeable single-cell LiPo battery",1,155,155,Amazon cart,Planned,"Use a suitable protected charging/power circuit; verify board voltage requirements."
